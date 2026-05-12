@@ -21,6 +21,13 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0a0a0a",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://achyut.dev"),
   title: {
