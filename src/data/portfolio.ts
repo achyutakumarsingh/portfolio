@@ -1,12 +1,12 @@
 import { Project, Experience, Skill, SocialLink, NavItem } from "@/types";
 
 export const siteConfig = {
-  name: "Achyut Kumar Singh",
+  name: "Achyuta Kumar Singh",
   title: "Full Stack Developer & Designer",
   description:
     "I craft exceptional digital experiences that live at the intersection of design and engineering. Passionate about building products that make a difference.",
-  url: "https://achyut.dev",
-  email: "hello@achyut.dev",
+  url: "https://Achyuta.dev",
+  email: "hello@Achyuta.dev",
   location: "India",
   availability: "Available for freelance & full-time",
   resumeUrl: "/resume.pdf",
@@ -21,10 +21,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { name: "GitHub", url: "https://github.com/achyut", icon: "github" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/achyut", icon: "linkedin" },
-  { name: "Twitter", url: "https://x.com/achyut", icon: "twitter" },
-  { name: "Email", url: "mailto:hello@achyut.dev", icon: "mail" },
+  { name: "GitHub", url: "https://github.com/Achyuta", icon: "github" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/Achyuta", icon: "linkedin" },
+  { name: "Twitter", url: "https://x.com/Achyuta", icon: "twitter" },
+  { name: "Email", url: "mailto:hello@Achyuta.dev", icon: "mail" },
 ];
 
 export const projects: Project[] = [
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     image: "/images/project-nexus.jpg",
     tags: ["AI/ML", "TypeScript", "React", "Python"],
     category: "ai",
-    github: "https://github.com/achyut/nexus-ai",
+    github: "https://github.com/Achyuta/nexus-ai",
     live: "https://nexus-ai.dev",
     featured: true,
     metrics: { stars: 2400, users: "15K+", performance: "99.9% uptime" },
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     image: "/images/project-civic.jpg",
     tags: ["Full Stack", "ML", "React", "FastAPI"],
     category: "web",
-    github: "https://github.com/achyut/civic-sense",
+    github: "https://github.com/Achyuta/civic-sense",
     live: "https://civicsense.app",
     featured: true,
     metrics: { stars: 850, users: "5K+", performance: "60% faster resolution" },
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     image: "/images/project-quantum.jpg",
     tags: ["Open Source", "React", "TypeScript", "Design System"],
     category: "open-source",
-    github: "https://github.com/achyut/quantum-ui",
+    github: "https://github.com/Achyuta/quantum-ui",
     live: "https://quantum-ui.dev",
     featured: true,
     metrics: { stars: 4200, users: "20K+ downloads/mo", performance: "100 Lighthouse" },
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     image: "/images/project-pulse.jpg",
     tags: ["Dashboard", "D3.js", "WebSocket", "ML"],
     category: "web",
-    github: "https://github.com/achyut/pulse-analytics",
+    github: "https://github.com/Achyuta/pulse-analytics",
     live: "https://pulse-analytics.io",
     featured: false,
     metrics: { users: "2K+", performance: "<50ms latency" },
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     image: "/images/project-forge.jpg",
     tags: ["Mobile", "React Native", "Firebase"],
     category: "mobile",
-    github: "https://github.com/achyut/forge",
+    github: "https://github.com/Achyuta/forge",
     live: "https://forge-app.dev",
     featured: false,
     metrics: { stars: 600, users: "8K+ installs" },
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     image: "/images/project-aurora.jpg",
     tags: ["Design", "Figma", "Documentation"],
     category: "design",
-    github: "https://github.com/achyut/aurora-design",
+    github: "https://github.com/Achyuta/aurora-design",
     live: "https://aurora-design.dev",
     featured: false,
     metrics: { stars: 1800, users: "50+ teams" },
