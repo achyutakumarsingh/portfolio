@@ -16,8 +16,9 @@ export const navItems: NavItem[] = [
   { name: "Home", href: "/", shortcut: "1" },
   { name: "Projects", href: "/projects", shortcut: "2" },
   { name: "About", href: "/about", shortcut: "3" },
-  { name: "Contact", href: "/contact", shortcut: "4" },
-  { name: "Resume", href: "/resume", shortcut: "5" },
+  { name: "Achievements", href: "/#achievements", shortcut: "4" },
+  { name: "Contact", href: "/contact", shortcut: "5" },
+  { name: "Resume", href: "/resume", shortcut: "6" },
 ];
 
 export const socialLinks: SocialLink[] = [
