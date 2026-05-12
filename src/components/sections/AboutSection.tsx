@@ -39,7 +39,7 @@ export default function AboutSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Timeline */}
           <motion.div
             initial="hidden"

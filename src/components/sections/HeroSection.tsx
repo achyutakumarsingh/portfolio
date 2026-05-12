@@ -79,7 +79,7 @@ export default function HeroSection() {
 
         {/* Name - animated letter by letter */}
         <motion.h1
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tighter mb-6"
+          className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tighter mb-6"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
@@ -120,7 +120,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="text-xl md:text-2xl text-neon-blue font-mono font-medium"
+            className="text-lg md:text-2xl text-neon-blue font-mono font-medium"
           >
             {subtitles[subtitleIndex]}
           </motion.p>
@@ -131,7 +131,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
+          className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed px-2"
         >
           {siteConfig.description}
         </motion.p>
