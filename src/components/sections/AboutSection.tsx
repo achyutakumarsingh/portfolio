@@ -26,15 +26,15 @@ export default function AboutSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <motion.p variants={fadeInUp} className="text-sm font-mono text-neon-blue mb-2 uppercase tracking-widest">
+          <motion.p variants={fadeInUp} className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest">
             About Me
           </motion.p>
-          <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <motion.h2 variants={fadeInUp} custom={1} className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4">
             The Story So Far
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
+          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-2xl text-sm sm:text-base leading-relaxed">
             {siteConfig.description}
           </motion.p>
         </motion.div>
@@ -46,7 +46,7 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <h3 className="text-lg font-display font-semibold mb-8 text-white/80">Education & Journey</h3>
+            <h3 className="text-base sm:text-lg font-display font-semibold mb-6 text-white/80">Education & Journey</h3>
             <div className="relative">
               <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue/50 via-neon-purple/50 to-transparent" />
               {journey.map((item, i) => (
@@ -71,7 +71,7 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <h3 className="text-lg font-display font-semibold mb-8 text-white/80">Core Skills</h3>
+            <h3 className="text-base sm:text-lg font-display font-semibold mb-6 text-white/80">Core Skills</h3>
 
             <div className="space-y-8">
               <div>

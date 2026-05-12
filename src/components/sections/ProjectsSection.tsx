@@ -40,16 +40,16 @@ export default function ProjectsSection({ showAll = false }: { showAll?: boolean
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-12"
+          className="mb-10 sm:mb-12"
         >
-          <motion.p variants={fadeInUp} className="text-sm font-mono text-neon-blue mb-2 uppercase tracking-widest">
+          <motion.p variants={fadeInUp} className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest">
             Projects
           </motion.p>
-          <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <motion.h2 variants={fadeInUp} custom={1} className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4">
             Selected Work
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-xl text-lg">
-            A curated collection of projects that showcase my skills in full-stack development, AI, and design.
+          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-xl text-sm sm:text-base">
+            A curated collection of projects showcasing my skills in frontend engineering and product design.
           </motion.p>
         </motion.div>
 

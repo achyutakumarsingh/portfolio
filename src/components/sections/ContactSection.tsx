@@ -40,15 +40,15 @@ export default function ContactSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <motion.p variants={fadeInUp} className="text-sm font-mono text-neon-blue mb-2 uppercase tracking-widest">
+          <motion.p variants={fadeInUp} className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest">
             Contact
           </motion.p>
-          <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <motion.h2 variants={fadeInUp} custom={1} className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4">
             Let&apos;s Work Together
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-xl text-lg">
+          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-xl text-sm sm:text-base">
             Have a project in mind or want to collaborate? I&apos;d love to hear from you.
           </motion.p>
         </motion.div>
@@ -171,7 +171,7 @@ export default function ContactSection() {
             {/* Social Links */}
             <div className="glass rounded-2xl p-8">
               <h4 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">Connect</h4>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((link) => (
                   <motion.a
                     key={link.name}

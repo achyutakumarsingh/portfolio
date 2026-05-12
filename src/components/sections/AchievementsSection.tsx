@@ -79,25 +79,25 @@ export default function AchievementsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <motion.p
             variants={fadeInUp}
-            className="text-sm font-mono text-neon-blue mb-2 uppercase tracking-widest"
+            className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest"
           >
             Achievements
           </motion.p>
           <motion.h2
             variants={fadeInUp}
             custom={1}
-            className="text-3xl md:text-5xl font-display font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4"
           >
             Built on Consistency
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             custom={2}
-            className="text-muted-foreground max-w-xl text-lg leading-relaxed"
+            className="text-muted-foreground max-w-xl text-sm sm:text-base leading-relaxed"
           >
             A snapshot of my academic performance, competitive programming milestones, and engineering work.
           </motion.p>
@@ -108,20 +108,20 @@ export default function AchievementsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16"
         >
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               variants={fadeInUp}
               custom={i}
-              className="glass rounded-xl p-5 text-center border border-white/5 hover:border-neon-blue/20 transition-all group"
+              className="glass rounded-xl p-4 text-center border border-white/5 hover:border-neon-blue/20 transition-all group"
             >
-              <div className="text-2xl md:text-3xl font-display font-bold text-white group-hover:text-neon-blue transition-colors">
+              <div className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white group-hover:text-neon-blue transition-colors">
                 {stat.value}
                 <span className="text-neon-blue">{stat.suffix}</span>
               </div>
-              <div className="text-xs text-muted-foreground mt-1 font-mono">{stat.label}</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground mt-1 font-mono leading-tight">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
