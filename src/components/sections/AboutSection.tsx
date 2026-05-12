@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { skills } from "@/data/portfolio";
+import { skills, siteConfig } from "@/data/portfolio";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function AboutSection() {
@@ -10,11 +10,10 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const journey = [
-    { year: "2021", event: "Started B.Tech in Computer Science", detail: "Began the journey into the world of programming and algorithms." },
-    { year: "2022", event: "First Hackathon Win", detail: "Won my first national-level hackathon, building a real-time collaboration tool in 24 hours." },
-    { year: "2023", event: "First Industry Role", detail: "Joined InnovateLabs as a Frontend Intern, later moved to DigitalCraft Studio." },
-    { year: "2024", event: "Open Source Impact", detail: "Quantum UI hit 4K+ stars. Started contributing to major React ecosystem projects." },
-    { year: "2025", event: "Senior Developer", detail: "Leading teams, architecting systems, and building AI-powered developer tools." },
+    { year: "2025 - Present", event: "B.Tech in IT @ IIIT Allahabad", detail: "First-year Information Technology student exploring DSA and web development. Secured JEE Main Rank 4788 (99.7 percentile) and qualified JEE Advanced 2025." },
+    { year: "Active", event: "Competitive Programmer", detail: "Codeforces Pupil & CodeChef 2⭐. Active problem solver with a strong DSA foundation, focused on algorithmic thinking." },
+    { year: "2023 - 2025", event: "12th CBSE @ Zoom International", detail: "Completed higher secondary education in Durgapur. Secured 91%." },
+    { year: "2012 - 2023", event: "10th ICSE @ St. Xavier's School", detail: "Completed foundational education in Durgapur. Secured 96.6%." },
   ];
 
   const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -37,8 +36,7 @@ export default function AboutSection() {
             The Story So Far
           </motion.h2>
           <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
-            I&apos;m a full stack developer with a passion for creating exceptional digital experiences. 
-            I believe in writing clean, performant code and designing interfaces that delight users.
+            {siteConfig.description}
           </motion.p>
         </motion.div>
 
