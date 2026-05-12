@@ -60,7 +60,7 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
     >
       {/* Spotlight effect — desktop only */}
       {!isMobile && (
@@ -76,7 +76,7 @@ export default function HeroSection() {
       <div className="absolute top-1/4 -left-16 sm:-left-24 w-48 sm:w-80 lg:w-96 h-48 sm:h-80 lg:h-96 bg-neon-blue/10 rounded-full blur-[80px] sm:blur-[120px] animate-float pointer-events-none" />
       <div className="absolute bottom-1/4 -right-16 sm:-right-24 w-48 sm:w-80 lg:w-96 h-48 sm:h-80 lg:h-96 bg-neon-purple/10 rounded-full blur-[80px] sm:blur-[120px] animate-float animate-delay-300 pointer-events-none" />
 
-      <div className="container-custom relative z-10 text-center py-28 sm:py-0">
+      <div className="container-custom relative z-10 text-center">
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
