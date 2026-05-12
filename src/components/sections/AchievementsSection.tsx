@@ -15,9 +15,9 @@ const achievements = [
   },
   {
     icon: "🏆",
-    title: "JEE Main — 99.7 Percentile",
-    subtitle: "Rank 4788 (2025)",
-    description: "Secured an all-India rank of 4788 among over 1.2 million candidates.",
+    title: "JEE Main 99.7 Percentile",
+    subtitle: "AIR 4788 · 2025",
+    description: "Secured an all-India rank among 1.2+ million candidates.",
     tag: "Entrance Exam",
     tagColor: "text-neon-purple border-neon-purple/20 bg-neon-purple/5",
   },
@@ -33,7 +33,7 @@ const achievements = [
     icon: "💻",
     title: "Codeforces Pupil",
     subtitle: "Active Competitive Programmer",
-    description: "Consistently solving algorithmic problems, building strong DSA foundations.",
+    description: "Consistently solving algorithmic problems with strong DSA foundations.",
     tag: "Competitive Programming",
     tagColor: "text-neon-green border-neon-green/20 bg-neon-green/5",
   },
@@ -41,15 +41,15 @@ const achievements = [
     icon: "⭐",
     title: "CodeChef 2⭐",
     subtitle: "Rated Competitive Programmer",
-    description: "Achieved a 2-star rating on CodeChef through regular contest participation.",
+    description: "Achieved a 2-star rating through regular contest participation.",
     tag: "Competitive Programming",
     tagColor: "text-neon-green border-neon-green/20 bg-neon-green/5",
   },
   {
     icon: "🛠️",
-    title: "Civic Issue Reporting Platform",
+    title: "Civic Issue Platform",
     subtitle: "Civic-Tech Web Application",
-    description: "Built a scalable full-stack platform for public issue reporting with a modern UI.",
+    description: "Built a full-stack platform for public issue reporting with a modern UI.",
     tag: "Project",
     tagColor: "text-neon-pink border-neon-pink/20 bg-neon-pink/5",
   },
@@ -57,20 +57,20 @@ const achievements = [
 
 const stats = [
   { value: "9.1", label: "GPA (Sem I)", suffix: "" },
-  { value: "99.7", label: "JEE Main Percentile", suffix: "%" },
-  { value: "2⭐", label: "CodeChef Rating", suffix: "" },
-  { value: "4788", label: "JEE Main Rank", suffix: "" },
+  { value: "99.7", label: "JEE Percentile", suffix: "%" },
+  { value: "2⭐", label: "CodeChef", suffix: "" },
+  { value: "4788", label: "JEE Rank", suffix: "" },
 ];
 
 export default function AchievementsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section ref={ref} className="section-padding relative" id="achievements">
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-neon-purple/5 rounded-full blur-[120px]" />
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-neon-purple/4 rounded-full blur-[100px] sm:blur-[120px]" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -79,84 +79,75 @@ export default function AchievementsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-10 sm:mb-16"
+          className="mb-10 sm:mb-14"
         >
-          <motion.p
-            variants={fadeInUp}
-            className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest"
-          >
+          <motion.p variants={fadeInUp} className="section-label">
             Achievements
           </motion.p>
-          <motion.h2
-            variants={fadeInUp}
-            custom={1}
-            className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4"
-          >
+          <motion.h2 variants={fadeInUp} custom={1} className="section-heading">
             Built on Consistency
           </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            custom={2}
-            className="text-muted-foreground max-w-xl text-sm sm:text-base leading-relaxed"
-          >
+          <motion.p variants={fadeInUp} custom={2} className="section-subheading max-w-xl">
             A snapshot of my academic performance, competitive programming milestones, and engineering work.
           </motion.p>
         </motion.div>
 
-        {/* Stats Bar */}
+        {/* Stats Bar — 2 cols on mobile, 4 on sm+ */}
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 sm:mb-14"
         >
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               variants={fadeInUp}
               custom={i}
-              className="glass rounded-xl p-4 text-center border border-white/5 hover:border-neon-blue/20 transition-all group"
+              className="glass rounded-xl p-4 sm:p-5 text-center border border-white/[0.06] hover:border-neon-blue/20 transition-all group"
             >
-              <div className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white group-hover:text-neon-blue transition-colors">
-                {stat.value}
-                <span className="text-neon-blue">{stat.suffix}</span>
+              <div
+                style={{ fontSize: "clamp(1.25rem, 3.5vw, 1.875rem)" }}
+                className="font-display font-bold text-white group-hover:text-neon-blue transition-colors"
+              >
+                {stat.value}<span className="text-neon-blue">{stat.suffix}</span>
               </div>
-              <div className="text-[10px] sm:text-xs text-muted-foreground mt-1 font-mono leading-tight">{stat.label}</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground mt-1 font-mono leading-snug">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Achievement Cards */}
+        {/* Achievement Cards — 1 col mobile, 2 col md, 3 col lg */}
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
         >
           {achievements.map((item, i) => (
             <motion.div
               key={item.title}
               variants={fadeInUp}
               custom={i}
-              className="group relative glass rounded-2xl p-6 border border-white/[0.06] transition-all duration-300 hover:border-white/15 hover:shadow-[0_0_30px_rgba(0,212,255,0.04)] overflow-hidden"
+              className="group relative glass rounded-2xl p-5 sm:p-6 border border-white/[0.06] transition-all duration-300 hover:border-white/12 hover:shadow-[0_0_24px_rgba(0,212,255,0.04)] overflow-hidden"
             >
-              {/* Hover glow line at top */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-blue/0 to-transparent group-hover:via-neon-blue/40 transition-all duration-500" />
+              {/* Top glow line on hover */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-blue/0 to-transparent group-hover:via-neon-blue/35 transition-all duration-500" />
 
               {/* Icon */}
-              <div className="text-2xl mb-4">{item.icon}</div>
+              <div className="text-2xl mb-3">{item.icon}</div>
 
               {/* Tag */}
-              <span className={`inline-block text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border mb-4 ${item.tagColor}`}>
+              <span className={`inline-block text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border mb-3 ${item.tagColor}`}>
                 {item.tag}
               </span>
 
               {/* Content */}
-              <h4 className="text-white font-semibold text-base leading-snug mb-1">
+              <h4 className="text-[14px] sm:text-[15px] font-semibold text-white leading-snug mb-1">
                 {item.title}
               </h4>
-              <p className="text-xs font-mono text-neon-blue mb-3">{item.subtitle}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              <p className="text-[11px] font-mono text-neon-blue mb-2.5">{item.subtitle}</p>
+              <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -19,6 +19,7 @@
 
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
 
   html {
@@ -26,12 +27,22 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* Prevent text size adjust on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    /* Better mobile touch scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Improve tap targets on mobile */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
@@ -40,7 +51,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-track {
@@ -49,7 +60,7 @@
 
   ::-webkit-scrollbar-thumb {
     background: hsl(0 0% 20%);
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -60,31 +71,28 @@
 @layer components {
   .glass {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .glass-strong {
     background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glow {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15),
-                0 0 60px rgba(0, 212, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.12), 0 0 60px rgba(0, 212, 255, 0.04);
   }
 
   .glow-purple {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15),
-                0 0 60px rgba(168, 85, 247, 0.05);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.12), 0 0 60px rgba(168, 85, 247, 0.04);
   }
 
   .glow-text {
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5),
-                 0 0 40px rgba(0, 212, 255, 0.2);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.15);
   }
 
   .gradient-text {
@@ -114,12 +122,34 @@
     opacity: 0.5;
   }
 
+  /* Section vertical rhythm — fluid, no horizontal padding (handled by container) */
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-16 sm:py-20 md:py-28 lg:py-32;
   }
 
+  /* Single source of truth for horizontal padding + max-width */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-10;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 5vw, 3rem);
+    padding-right: clamp(1rem, 5vw, 3rem);
+  }
+
+  /* Fluid section headings */
+  .section-label {
+    @apply text-[11px] font-mono text-neon-blue uppercase tracking-[0.2em] mb-2;
+  }
+
+  .section-heading {
+    font-size: clamp(1.6rem, 4vw + 0.5rem, 3.5rem);
+    @apply font-display font-bold leading-tight mb-4;
+  }
+
+  .section-subheading {
+    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem);
+    @apply text-muted-foreground leading-relaxed;
   }
 
   .magnetic-button {
@@ -148,6 +178,12 @@
     transform-style: preserve-3d;
     perspective: 1000px;
   }
+
+  /* Reusable card base */
+  .premium-card {
+    @apply glass rounded-2xl border border-white/[0.06] transition-all duration-300;
+    @apply hover:border-white/10;
+  }
 }
 
 @layer utilities {
@@ -161,4 +197,25 @@
   .animate-delay-500 { animation-delay: 500ms; }
   .animate-delay-700 { animation-delay: 700ms; }
   .animate-delay-1000 { animation-delay: 1000ms; }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile: reduce expensive blur effects */
+@media (max-width: 640px) {
+  .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .glass-strong {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
 }

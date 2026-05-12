@@ -7,12 +7,24 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function AboutSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const journey = [
-    { year: "2025 – Present", event: "B.Tech in IT", detail: "Indian Institute of Information Technology (IIIT) Allahabad" },
-    { year: "2023 – 2025", event: "Higher Secondary (12th CBSE)", detail: "Zoom International School, Durgapur — 91%" },
-    { year: "2012 – 2023", event: "Secondary (10th ICSE)", detail: "St. Xavier's School, Durgapur — 96.6%" },
+    {
+      year: "2025 – Present",
+      event: "B.Tech in Information Technology",
+      detail: "Indian Institute of Information Technology (IIIT) Allahabad",
+    },
+    {
+      year: "2023 – 2025",
+      event: "12th CBSE — 91%",
+      detail: "Zoom International School, Durgapur",
+    },
+    {
+      year: "2012 – 2023",
+      event: "10th ICSE — 96.6%",
+      detail: "St. Xavier's School, Durgapur",
+    },
   ];
 
   const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -26,19 +38,20 @@ export default function AboutSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="mb-10 sm:mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <motion.p variants={fadeInUp} className="text-xs font-mono text-neon-blue mb-2 uppercase tracking-widest">
+          <motion.p variants={fadeInUp} className="section-label">
             About Me
           </motion.p>
-          <motion.h2 variants={fadeInUp} custom={1} className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4">
+          <motion.h2 variants={fadeInUp} custom={1} className="section-heading">
             The Story So Far
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground max-w-2xl text-sm sm:text-base leading-relaxed">
+          <motion.p variants={fadeInUp} custom={2} className="section-subheading max-w-2xl">
             {siteConfig.description}
           </motion.p>
         </motion.div>
 
+        {/* Two-column grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Timeline */}
           <motion.div
@@ -46,48 +59,54 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <h3 className="text-base sm:text-lg font-display font-semibold mb-6 text-white/80">Education & Journey</h3>
+            <h3 className="text-sm sm:text-base font-display font-semibold mb-6 text-white/70 uppercase tracking-wider">
+              Education & Journey
+            </h3>
             <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue/50 via-neon-purple/50 to-transparent" />
+              {/* Vertical line */}
+              <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-neon-blue/40 via-neon-purple/30 to-transparent" />
               {journey.map((item, i) => (
                 <motion.div
                   key={item.year}
                   variants={fadeInUp}
                   custom={i}
-                  className="relative pl-12 pb-8 last:pb-0 group"
+                  className="relative pl-8 pb-8 last:pb-0 group"
                 >
-                  <div className="absolute left-[11px] top-1.5 w-[10px] h-[10px] rounded-full border-2 border-neon-blue bg-background group-hover:bg-neon-blue transition-colors" />
-                  <span className="text-xs font-mono text-neon-blue">{item.year}</span>
-                  <h4 className="text-sm font-semibold text-white mt-1">{item.event}</h4>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.detail}</p>
+                  {/* Dot */}
+                  <div className="absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full border-2 border-neon-blue bg-background group-hover:bg-neon-blue transition-colors duration-200" />
+                  <span className="text-[11px] font-mono text-neon-blue/80 block mb-0.5">{item.year}</span>
+                  <h4 className="text-sm sm:text-[15px] font-semibold text-white leading-snug">{item.event}</h4>
+                  <p className="text-xs sm:text-[13px] text-muted-foreground mt-1 leading-relaxed">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Skills with progress bars */}
+          {/* Skills */}
           <motion.div
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <h3 className="text-base sm:text-lg font-display font-semibold mb-6 text-white/80">Core Skills</h3>
+            <h3 className="text-sm sm:text-base font-display font-semibold mb-6 text-white/70 uppercase tracking-wider">
+              Core Skills
+            </h3>
 
-            <div className="space-y-8">
+            <div className="space-y-7">
               <div>
-                <p className="text-xs font-mono text-neon-blue uppercase tracking-wider mb-4">Frontend</p>
-                <div className="space-y-3">
+                <p className="text-[10px] font-mono text-neon-blue uppercase tracking-[0.15em] mb-4">Frontend</p>
+                <div className="space-y-3.5">
                   {frontendSkills.slice(0, 5).map((skill, i) => (
                     <motion.div key={skill.name} variants={fadeInUp} custom={i}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm text-white/80">{skill.icon} {skill.name}</span>
-                        <span className="text-xs text-muted-foreground font-mono">{skill.level}%</span>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-[13px] sm:text-sm text-white/80">{skill.icon} {skill.name}</span>
+                        <span className="text-[11px] text-muted-foreground font-mono">{skill.level}%</span>
                       </div>
-                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ duration: 1, delay: 0.3 + i * 0.1, ease: "easeOut" }}
+                          transition={{ duration: 1, delay: 0.3 + i * 0.08, ease: "easeOut" }}
                           className="h-full rounded-full bg-gradient-to-r from-neon-blue to-neon-purple"
                         />
                       </div>
@@ -97,19 +116,19 @@ export default function AboutSection() {
               </div>
 
               <div>
-                <p className="text-xs font-mono text-neon-purple uppercase tracking-wider mb-4">Backend & Languages</p>
-                <div className="space-y-3">
-                  {backendSkills.slice(0, 5).map((skill, i) => (
+                <p className="text-[10px] font-mono text-neon-purple uppercase tracking-[0.15em] mb-4">Languages</p>
+                <div className="space-y-3.5">
+                  {backendSkills.slice(0, 3).map((skill, i) => (
                     <motion.div key={skill.name} variants={fadeInUp} custom={i + 5}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm text-white/80">{skill.icon} {skill.name}</span>
-                        <span className="text-xs text-muted-foreground font-mono">{skill.level}%</span>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-[13px] sm:text-sm text-white/80">{skill.icon} {skill.name}</span>
+                        <span className="text-[11px] text-muted-foreground font-mono">{skill.level}%</span>
                       </div>
-                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ duration: 1, delay: 0.6 + i * 0.1, ease: "easeOut" }}
+                          transition={{ duration: 1, delay: 0.5 + i * 0.08, ease: "easeOut" }}
                           className="h-full rounded-full bg-gradient-to-r from-neon-purple to-neon-pink"
                         />
                       </div>
