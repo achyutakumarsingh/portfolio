@@ -23,6 +23,8 @@ export const navItems: NavItem[] = [
 export const socialLinks: SocialLink[] = [
   { name: "GitHub", url: "https://github.com/achyutakumarsingh", icon: "github" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/achyuta-singh", icon: "linkedin" },
+  { name: "Codeforces (Pupil)", url: "https://codeforces.com/profile/achyutasingh17", icon: "codeforces" },
+  { name: "CodeChef (2⭐)", url: "https://www.codechef.com/users/achyutasingh", icon: "codechef" },
   { name: "Email", url: "mailto:achyutasingh17@gmail.com", icon: "mail" },
 ];
 

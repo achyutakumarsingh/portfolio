@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { siteConfig, socialLinks } from "@/data/portfolio";
-import { Github, Linkedin, Twitter, Mail, ArrowDown, ChevronRight } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ArrowDown, ChevronRight, Terminal, Code2 } from "lucide-react";
 import Link from "next/link";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -11,13 +11,15 @@ const iconMap: Record<string, React.ReactNode> = {
   linkedin: <Linkedin className="w-5 h-5" />,
   twitter: <Twitter className="w-5 h-5" />,
   mail: <Mail className="w-5 h-5" />,
+  codeforces: <Terminal className="w-5 h-5" />,
+  codechef: <Code2 className="w-5 h-5" />,
 };
 
 const subtitles = [
-  "Full Stack Developer",
-  "UI/UX Enthusiast",
-  "Open Source Contributor",
-  "Problem Solver",
+  "Software Engineer",
+  "Competitive Programmer",
+  "Codeforces Pupil",
+  "CodeChef 2⭐",
 ];
 
 export default function HeroSection() {

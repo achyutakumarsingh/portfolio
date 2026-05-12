@@ -4,13 +4,15 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { siteConfig, socialLinks } from "@/data/portfolio";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { Send, Github, Linkedin, Twitter, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Send, Github, Linkedin, Twitter, Mail, MapPin, Clock, CheckCircle, Terminal, Code2 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github className="w-4 h-4" />,
   linkedin: <Linkedin className="w-4 h-4" />,
   twitter: <Twitter className="w-4 h-4" />,
   mail: <Mail className="w-4 h-4" />,
+  codeforces: <Terminal className="w-4 h-4" />,
+  codechef: <Code2 className="w-4 h-4" />,
 };
 
 export default function ContactSection() {
