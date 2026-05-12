@@ -10,10 +10,18 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const journey = [
-    { year: "2025 - Present", event: "B.Tech in IT @ IIIT Allahabad", detail: "First-year Information Technology student exploring DSA and web development. Secured JEE Main Rank 4788 (99.7 percentile) and qualified JEE Advanced 2025." },
-    { year: "Active", event: "Competitive Programmer", detail: "Codeforces Pupil & CodeChef 2⭐. Active problem solver with a strong DSA foundation, focused on algorithmic thinking." },
-    { year: "2023 - 2025", event: "12th CBSE @ Zoom International", detail: "Completed higher secondary education in Durgapur. Secured 91%." },
-    { year: "2012 - 2023", event: "10th ICSE @ St. Xavier's School", detail: "Completed foundational education in Durgapur. Secured 96.6%." },
+    { year: "2025 - Present", event: "B.Tech in IT", detail: "Indian Institute of Information Technology (IIIT) Allahabad" },
+    { year: "2023 - 2025", event: "Higher Secondary (12th CBSE)", detail: "Zoom International School, Durgapur" },
+    { year: "2012 - 2023", event: "Secondary (10th ICSE)", detail: "St. Xavier's School, Durgapur" },
+  ];
+
+  const achievements = [
+    { title: "JEE Main Rank 4788", subtitle: "99.7 Percentile", icon: "🏆" },
+    { title: "JEE Advanced", subtitle: "Qualified 2025", icon: "🎯" },
+    { title: "Codeforces Pupil", subtitle: "Active Competitive Programmer", icon: "💻" },
+    { title: "CodeChef 2⭐", subtitle: "Consistent Problem Solver", icon: "⭐" },
+    { title: "10th ICSE: 96.6%", subtitle: "St. Xavier's School", icon: "📚" },
+    { title: "12th CBSE: 91%", subtitle: "Zoom International", icon: "🎓" },
   ];
 
   const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -47,7 +55,7 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <h3 className="text-lg font-display font-semibold mb-8 text-white/80">My Journey</h3>
+            <h3 className="text-lg font-display font-semibold mb-8 text-white/80">Education & Journey</h3>
             <div className="relative">
               <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue/50 via-neon-purple/50 to-transparent" />
               {journey.map((item, i) => (
@@ -98,7 +106,7 @@ export default function AboutSection() {
               </div>
 
               <div>
-                <p className="text-xs font-mono text-neon-purple uppercase tracking-wider mb-4">Backend</p>
+                <p className="text-xs font-mono text-neon-purple uppercase tracking-wider mb-4">Backend & Languages</p>
                 <div className="space-y-3">
                   {backendSkills.slice(0, 5).map((skill, i) => (
                     <motion.div key={skill.name} variants={fadeInUp} custom={i + 5}>
@@ -121,6 +129,30 @@ export default function AboutSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Achievements Section */}
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          className="mt-20"
+        >
+          <h3 className="text-lg font-display font-semibold mb-8 text-white/80">Key Achievements</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((item, i) => (
+              <motion.div
+                key={item.title}
+                variants={fadeInUp}
+                custom={i}
+                className="glass rounded-xl p-6 hover:bg-white/5 transition-colors border border-white/5 hover:border-neon-blue/20"
+              >
+                <div className="text-3xl mb-4">{item.icon}</div>
+                <h4 className="text-white font-semibold mb-1">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
