@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5">
+    <footer className="relative z-10 border-t border-white/5 bg-background">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -87,7 +87,9 @@ export default function Footer() {
             <p className="text-xs text-muted-foreground flex items-center gap-1">
               Built with <Heart className="w-3 h-3 text-neon-pink" /> using Next.js & Framer Motion
             </p>
-            <NeonBadge />
+            <div className="flex items-center justify-center min-w-[120px] min-h-[40px]">
+              <NeonBadge />
+            </div>
           </div>
         </div>
       </div>
