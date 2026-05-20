@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout";
+import { HumProvider } from '@humlabs/react';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,18 +22,11 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: "#0a0a0a",
-};
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://achyut.dev"),
+  metadataBase: new URL("https://Achyuta.dev"),
   title: {
-    default: "Achyut Kumar Singh — Full Stack Developer & Designer",
-    template: "%s | Achyut Kumar Singh",
+    default: "Achyuta Kumar Singh — Full Stack Developer & Designer",
+    template: "%s | Achyuta Kumar Singh",
   },
   description:
     "I craft exceptional digital experiences at the intersection of design and engineering. Full Stack Developer specializing in React, Next.js, TypeScript, and AI.",
@@ -43,16 +37,16 @@ export const metadata: Metadata = {
     "TypeScript",
     "UI/UX",
     "Portfolio",
-    "Achyut Kumar Singh",
+    "Achyuta Kumar Singh",
   ],
-  authors: [{ name: "Achyut Kumar Singh" }],
-  creator: "Achyut Kumar Singh",
+  authors: [{ name: "Achyuta Kumar Singh" }],
+  creator: "Achyuta Kumar Singh",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://achyut.dev",
-    siteName: "Achyut Kumar Singh",
-    title: "Achyut Kumar Singh — Full Stack Developer & Designer",
+    url: "https://Achyuta.dev",
+    siteName: "Achyuta Kumar Singh",
+    title: "Achyuta Kumar Singh — Full Stack Developer & Designer",
     description:
       "I craft exceptional digital experiences at the intersection of design and engineering.",
     images: [
@@ -60,17 +54,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Achyut Kumar Singh Portfolio",
+        alt: "Achyuta Kumar Singh Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Achyut Kumar Singh — Full Stack Developer & Designer",
+    title: "Achyuta Kumar Singh — Full Stack Developer & Designer",
     description:
       "I craft exceptional digital experiences at the intersection of design and engineering.",
     images: ["/og-image.png"],
-    creator: "@achyut",
+    creator: "@Achyuta",
   },
   robots: {
     index: true,
@@ -95,7 +89,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} font-sans antialiased`}
       >
-        <ClientLayout>{children}</ClientLayout>
+
+        <HumProvider siteId='nffe19e1xrcuvzl46asds' >
+          <ClientLayout>{children}</ClientLayout>
+
+        </HumProvider>
       </body>
     </html>
   );

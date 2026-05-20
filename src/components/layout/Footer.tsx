@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { siteConfig, socialLinks, navItems } from "@/data/portfolio";
 import { Github, Linkedin, Twitter, Mail, Heart, ArrowUpRight } from "lucide-react";
+import { NeonBadge } from "@humlabs/react";
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github className="w-4 h-4" />,
@@ -82,9 +83,12 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-3 h-3 text-neon-pink" /> using Next.js & Framer Motion
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-xs text-muted-foreground flex items-center gap-1">
+              Built with <Heart className="w-3 h-3 text-neon-pink" /> using Next.js & Framer Motion
+            </p>
+            <NeonBadge />
+          </div>
         </div>
       </div>
     </footer>
