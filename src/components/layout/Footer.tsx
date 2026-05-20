@@ -88,7 +88,7 @@ export default function Footer() {
               Built with <Heart className="w-3 h-3 text-neon-pink" /> using Next.js & Framer Motion
             </p>
             <div className="flex items-center justify-center min-w-[120px] min-h-[40px]">
-              <NeonBadge />
+              <NeonBadge label="Views" />
             </div>
           </div>
         </div>
